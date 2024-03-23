@@ -1,12 +1,5 @@
 import { ReactNode, createContext, useState } from "react";
-
-interface Contact {
-  id: number;
-  name: string;
-  mainPhone: string;
-  mobilePhone: string;
-  workPhone: string;
-}
+import { Contact } from "../interfaces";
 
 interface ContactProviderProps {
   children: ReactNode;
