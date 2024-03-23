@@ -1,0 +1,53 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Ana Silva",
+      "mainPhone": "(11) 9876-5432",
+      "mobilePhone": "(22) 1234-5678",
+      "workPhone": "(33) 8765-4321"
+    },
+    {
+      "id": 2,
+      "name": "Carlos Oliveira",
+      "mainPhone": "(44) 2468-1357",
+      "mobilePhone": "(55) 9876-5432",
+      "workPhone": "(66) 4321-8765"
+    },
+    {
+      "id": 3,
+      "name": "Maria Santos",
+      "mainPhone": "(77) 9876-5432",
+      "mobilePhone": "(88) 1234-5678",
+      "workPhone": "(99) 8765-4321"
+    },
+    {
+      "id": 4,
+      "name": "João Costa",
+      "mainPhone": "(10) 2468-1357",
+      "mobilePhone": "(20) 9876-5432",
+      "workPhone": "(30) 4321-8765"
+    },
+    {
+      "id": 5,
+      "name": "Patrícia Oliveira",
+      "mainPhone": "(40) 9876-5432",
+      "mobilePhone": "(50) 1234-5678",
+      "workPhone": "(60) 8765-4321"
+    },
+    {
+      "id": 6,
+      "name": "Fernando Almeida",
+      "mainPhone": "(70) 2468-1357",
+      "mobilePhone": "(80) 9876-5432",
+      "workPhone": "(90) 4321-8765"
+    },
+    {
+      "id": 7,
+      "name": "Camila Santos",
+      "mainPhone": "(12) 9876-5432",
+      "mobilePhone": "(21) 1234-5678",
+      "workPhone": "(34) 8765-4321"
+    }
+  ]
+}
