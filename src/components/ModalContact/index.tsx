@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { FaWindowClose } from "react-icons/fa";
 import Modal from "react-modal";
 import { Container } from "./styles";
 import { ContactsContext } from "../../shared/context/ContactsContext";
@@ -6,9 +7,11 @@ import { ContactsContext } from "../../shared/context/ContactsContext";
 Modal.setAppElement("#root");
 
 export function ModalContact() {
-  const { openModal } = useContext(ContactsContext);
+  const { openModal, setOpenModal } = useContext(ContactsContext);
 
-  const handleCloseModal = () => {};
+  const handleCloseModal = () => {
+    setOpenModal(false);
+  };
 
   return (
     <Modal
@@ -22,7 +25,9 @@ export function ModalContact() {
         type="button"
         onClick={handleCloseModal}
         className="react-modal-close"
-      ></button>
+      >
+        <FaWindowClose />
+      </button>
 
       <Container>
         <h2>Cadastrar contato</h2>
