@@ -22,7 +22,7 @@ export function useTableContacts() {
     }
 
     fetchContacts();
-  }, []);
+  }, [contacts]);
 
   return {
     contacts,
