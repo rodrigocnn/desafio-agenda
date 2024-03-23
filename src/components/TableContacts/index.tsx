@@ -1,9 +1,9 @@
-import { useContext } from "react";
 import { Container } from "./styles";
-import { ContactsContext } from "../../shared/context/ContactsContext";
+
+import { useTableContacts } from "../../hooks/useTableContacts";
 
 export function TableContacts() {
-  const { contacts } = useContext(ContactsContext);
+  const { contacts } = useTableContacts();
 
   return (
     <Container>
