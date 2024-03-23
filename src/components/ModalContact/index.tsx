@@ -33,16 +33,14 @@ export function ModalContact() {
         <h2>Cadastrar contato</h2>
         <input placeholder="Nome" />
         <input type="number" placeholder="Telefone Principal" />
-
         <input placeholder="Telefone Celular" />
-
         <input placeholder="Telefone Trabalho" />
 
         <select id="categorias">
-          <option value="pessoal">Selecione Categoria</option>
-          <option value="pessoal">Pessoal</option>
-          <option value="trabalho">Trabalho</option>
-          <option value="emergencia">Emergência</option>
+          <option value="">Selecione Categoria</option>
+          <option value="Pessoal">Pessoal</option>
+          <option value="Trabalho">Trabalho</option>
+          <option value="Emergencia">Emergência</option>
         </select>
 
         <button type="submit">Cadastrar </button>
