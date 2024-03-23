@@ -6,7 +6,8 @@ import { Contact } from "../shared/interfaces";
 import { api } from "../services/api";
 
 export function useModalContact() {
-  const { openModal, setOpenModal } = useContext(ContactsContext);
+  const { openModal, setOpenModal, setUpdateGrid } =
+    useContext(ContactsContext);
   const [contact, setContact] = useState<Contact>();
 
   const handleCloseModal = () => {
@@ -27,6 +28,7 @@ export function useModalContact() {
     event.preventDefault();
     const response = await api.post("contacts", contact);
     if (response.data) {
+      setUpdateGrid(true);
       toast("Novo Contato Salvo com Sucesso", { type: "success" });
     }
   };
