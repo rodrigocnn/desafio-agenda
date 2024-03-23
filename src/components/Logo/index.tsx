@@ -1,3 +1,11 @@
+import { IoIosContact } from "react-icons/io";
+import { Title, Container } from "./styles";
+
 export function Logo() {
-  return <h2>My Contacts</h2>;
+  return (
+    <Container>
+      <Title>MyContacts</Title>
+      <IoIosContact />
+    </Container>
+  );
 }
