@@ -1,9 +1,11 @@
 import { useContext, useEffect } from "react";
 import { ContactsContext } from "../shared/context/ContactsContext";
 import { api } from "../services/api";
+import { toast } from "react-toastify";
 
 export function useTableContacts() {
-  const { contacts, setContacts, updateGrid } = useContext(ContactsContext);
+  const { contacts, setContacts, updateGrid, setUpdateGrid } =
+    useContext(ContactsContext);
 
   async function getContacts() {
     try {
@@ -25,14 +27,16 @@ export function useTableContacts() {
   }, [updateGrid]);
 
   async function deleteContact(id: number) {
-    alert(id);
-    // try {
-    //   const response = await api.delete(`contacts/${id}`);
-    //   return response.data;
-    // } catch (error) {
-    //   console.error("Erro ao obter contatos:", error);
-    //   return [];
-    // }
+    try {
+      const response = await api.delete(`contacts/${id}`);
+      setUpdateGrid(!updateGrid);
+      if (response.data) {
+        toast("Contato Excluído com Sucesso", { type: "success" });
+      }
+    } catch (error) {
+      console.error("Erro ao obter contatos:", error);
+      return [];
+    }
   }
 
   return {
