@@ -5,7 +5,7 @@ import { ButtonAction, Container, ContainerButtons } from "./styles";
 import { useTableContacts } from "../../hooks/useTableContacts";
 
 export function TableContacts() {
-  const { contacts } = useTableContacts();
+  const { contacts, deleteContact } = useTableContacts();
 
   return (
     <Container>
@@ -32,7 +32,7 @@ export function TableContacts() {
                   <ButtonAction>
                     <BiSolidEdit />
                   </ButtonAction>
-                  <ButtonAction>
+                  <ButtonAction onClick={() => deleteContact(contact.id)}>
                     <RiDeleteBin6Line />
                   </ButtonAction>
                 </ContainerButtons>
