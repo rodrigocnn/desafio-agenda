@@ -1,17 +1,14 @@
-import { useContext } from "react";
-import { FaWindowClose } from "react-icons/fa";
 import Modal from "react-modal";
-import { Container } from "./styles";
-import { ContactsContext } from "../../shared/context/ContactsContext";
+import { FaWindowClose } from "react-icons/fa";
+
+import { Form } from "./styles";
+import { useModalContact } from "../../hooks/useModalContact";
 
 Modal.setAppElement("#root");
 
 export function ModalContact() {
-  const { openModal, setOpenModal } = useContext(ContactsContext);
-
-  const handleCloseModal = () => {
-    setOpenModal(false);
-  };
+  const { onSubmit, handleChange, handleCloseModal, openModal } =
+    useModalContact();
 
   return (
     <Modal
@@ -29,22 +26,36 @@ export function ModalContact() {
         <FaWindowClose />
       </button>
 
-      <Container>
+      <Form>
         <h2>Cadastrar contato</h2>
-        <input placeholder="Nome" />
-        <input type="number" placeholder="Telefone Principal" />
-        <input placeholder="Telefone Celular" />
-        <input placeholder="Telefone Trabalho" />
+        <input onChange={handleChange} name="name" placeholder="Nome" />
+        <input
+          onChange={handleChange}
+          name="mainPhone"
+          placeholder="Telefone Principal"
+        />
+        <input
+          onChange={handleChange}
+          name="mobilePhone"
+          placeholder="Telefone Celular"
+        />
+        <input
+          onChange={handleChange}
+          name="workPhone"
+          placeholder="Telefone Trabalho"
+        />
 
-        <select id="categorias">
+        {/* <select id="categorias">
           <option value="">Selecione Categoria</option>
           <option value="Pessoal">Pessoal</option>
           <option value="Trabalho">Trabalho</option>
           <option value="Emergencia">Emergência</option>
-        </select>
+        </select> */}
 
-        <button type="submit">Cadastrar </button>
-      </Container>
+        <button onClick={onSubmit} type="submit">
+          Cadastrar
+        </button>
+      </Form>
     </Modal>
   );
 }
