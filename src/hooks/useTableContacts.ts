@@ -3,7 +3,7 @@ import { ContactsContext } from "../shared/context/ContactsContext";
 import { api } from "../services/api";
 
 export function useTableContacts() {
-  const { contacts, setContacts } = useContext(ContactsContext);
+  const { contacts, setContacts, updateGrid } = useContext(ContactsContext);
 
   async function getContacts() {
     try {
@@ -22,9 +22,21 @@ export function useTableContacts() {
     }
 
     fetchContacts();
-  }, [contacts]);
+  }, [updateGrid]);
+
+  async function deleteContact(id: number) {
+    alert(id);
+    // try {
+    //   const response = await api.delete(`contacts/${id}`);
+    //   return response.data;
+    // } catch (error) {
+    //   console.error("Erro ao obter contatos:", error);
+    //   return [];
+    // }
+  }
 
   return {
     contacts,
+    deleteContact,
   };
 }
