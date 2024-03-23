@@ -48,6 +48,27 @@
       "mainPhone": "(12) 9876-5432",
       "mobilePhone": "(21) 1234-5678",
       "workPhone": "(34) 8765-4321"
+    },
+    {
+      "name": "Osmar",
+      "mainPhone": "(77) 3612-2525",
+      "mobilePhone": "(77) 3612-2525",
+      "workPhone": "(77) 3612-2525",
+      "id": 8
+    },
+    {
+      "name": "Carmem Mirando",
+      "mainPhone": "(77) 3612-1313",
+      "mobilePhone": "(77) 3612-1313",
+      "workPhone": "(77) 3612-1313",
+      "id": 9
+    },
+    {
+      "name": "Adriane Diu",
+      "mainPhone": "(77) 3612-2525",
+      "mobilePhone": "(77) 3612-2525",
+      "workPhone": "(77) 3612-2525",
+      "id": 10
     }
   ]
 }

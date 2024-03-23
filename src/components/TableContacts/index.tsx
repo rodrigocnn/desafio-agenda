@@ -1,5 +1,4 @@
 import { Container } from "./styles";
-
 import { useTableContacts } from "../../hooks/useTableContacts";
 
 export function TableContacts() {
