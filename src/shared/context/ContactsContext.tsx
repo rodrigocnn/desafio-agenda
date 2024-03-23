@@ -7,7 +7,8 @@ interface ContactProviderProps {
 
 interface ContactsContextData {
   contacts: Contact[];
-  addContact: (newContact: Contact) => void;
+  updateGrid: boolean;
+  setUpdateGrid: (update: boolean) => void;
   setContacts: React.Dispatch<React.SetStateAction<Contact[]>>;
   openModal: boolean;
   setOpenModal: (isOpen: boolean) => void;
@@ -20,14 +21,18 @@ export const ContactsContext = createContext<ContactsContextData>(
 export function ContactsProvider({ children }: ContactProviderProps) {
   const [contacts, setContacts] = useState<Contact[]>([]);
   const [openModal, setOpenModal] = useState(false);
-
-  const addContact = (newContact: Contact) => {
-    setContacts((prevContacts) => [...prevContacts, newContact]);
-  };
+  const [updateGrid, setUpdateGrid] = useState(false);
 
   return (
     <ContactsContext.Provider
-      value={{ contacts, addContact, setContacts, openModal, setOpenModal }}
+      value={{
+        contacts,
+        setContacts,
+        updateGrid,
+        setUpdateGrid,
+        openModal,
+        setOpenModal,
+      }}
     >
       {children}
     </ContactsContext.Provider>
