@@ -34,7 +34,17 @@ export function ModalContact() {
         <input placeholder="Nome" />
         <input type="number" placeholder="Telefone Principal" />
 
-        <input placeholder="Categoria" />
+        <input placeholder="Telefone Celular" />
+
+        <input placeholder="Telefone Trabalho" />
+
+        <select id="categorias">
+          <option value="pessoal">Selecione Categoria</option>
+          <option value="pessoal">Pessoal</option>
+          <option value="trabalho">Trabalho</option>
+          <option value="emergencia">Emergência</option>
+        </select>
+
         <button type="submit">Cadastrar </button>
       </Container>
     </Modal>

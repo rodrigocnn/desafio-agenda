@@ -6,10 +6,11 @@ export const Container = styled.form`
     font-size: 1.5rem;
     margin-bottom: 2rem;
   }
-  input {
+  input,
+  select {
     width: 100%;
     padding: 0 1.5rem;
-    height: 4rem;
+    height: 2.5rem;
     border-radius: 0.25rem;
     border: 1px solid #d7d7d7;
     background: #e7e9ee;
@@ -18,9 +19,18 @@ export const Container = styled.form`
     &::placeholder {
       color: var(--text-body);
     }
-    & + input {
+    & + input,
+    & + select {
       margin-top: 1rem;
     }
+  }
+
+  select option {
+    color: #666;
+  }
+
+  select:not(:focus) {
+    color: var(--text-body);
   }
 
   button[type="submit"] {
