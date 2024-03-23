@@ -24,34 +24,8 @@ export const ContactsContext = createContext<ContactsContextData>(
   {} as ContactsContextData
 );
 
-const teste = [
-  {
-    id: 1,
-    name: "Rodrigo Cesar",
-    mainPhone: "(77) 3612-6968",
-    mobilePhone: "(77) 9833-1616",
-    workPhone: "(77) 3612-6616",
-  },
-
-  {
-    id: 1,
-    name: "Marcela Moreira",
-    mainPhone: "(77) 3612-6968",
-    mobilePhone: "(77) 9833-1616",
-    workPhone: "(77) 3612-6616",
-  },
-
-  {
-    id: 1,
-    name: "Luiza Costa",
-    mainPhone: "(77) 3612-6968",
-    mobilePhone: "(77) 9833-1616",
-    workPhone: "(77) 3612-6616",
-  },
-];
-
 export function ContactsProvider({ children }: ContactProviderProps) {
-  const [contacts, setContacts] = useState<Contact[]>(teste);
+  const [contacts, setContacts] = useState<Contact[]>([]);
   const [openModal, setOpenModal] = useState(false);
 
   const addContact = (newContact: Contact) => {
