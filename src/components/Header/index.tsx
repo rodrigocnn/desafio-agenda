@@ -15,7 +15,7 @@ export function Header() {
       <Content>
         <Logo />
         <button onClick={handleOpenModal} type="button">
-          Nova Transação
+          Novo Contato
         </button>
       </Content>
     </Container>
