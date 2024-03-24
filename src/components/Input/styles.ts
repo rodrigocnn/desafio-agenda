@@ -14,6 +14,7 @@ export const InputStyled = styled.input<InputProps>`
   background: #e7e9ee;
   font-weight: 400;
   font-size: 1rem;
+  color: var(--text-body);
   &::placeholder {
     color: var(--text-body);
   }
