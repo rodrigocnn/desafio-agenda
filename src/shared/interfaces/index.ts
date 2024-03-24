@@ -5,3 +5,8 @@ export interface Contact {
   mobilePhone: string;
   workPhone: string;
 }
+
+export interface FieldValidate {
+  fieldName: string;
+  validate: boolean;
+}
