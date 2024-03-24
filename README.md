@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="agenda" title="dtmoney" src="./.github/agenda.png" width="220px" />
+  <img alt="agenda" title="dtmoney" src="./.github/agenda.png"  />
 </h1>
 
 <p align="center">
