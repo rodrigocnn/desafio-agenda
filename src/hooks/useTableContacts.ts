@@ -14,6 +14,7 @@ export function useTableContacts() {
   } = useContext(ContactsContext);
 
   const [openModalFilter, setOpenModalFilter] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   async function getContacts() {
     try {
@@ -27,8 +28,10 @@ export function useTableContacts() {
 
   useEffect(() => {
     async function fetchContacts() {
+      setLoading(true);
       const fetchedContacts = await getContacts();
       setContacts(fetchedContacts);
+      setLoading(false);
     }
 
     fetchContacts();
@@ -55,6 +58,7 @@ export function useTableContacts() {
   return {
     contacts,
     openModalFilter,
+    loading,
     deleteContact,
     setOpenModal,
     setOpenModalFilter,

@@ -19,4 +19,8 @@ export const SpinnerStyled = styled.div`
   width: 48px;
   height: 48px;
   border-radius: 50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;

@@ -10,9 +10,11 @@ import {
 } from "./styles";
 import { useTableContacts } from "../../hooks/useTableContacts";
 import { ModalFilter } from "../ModalFilter";
+import { Spinner } from "../Spinner";
 
 export function TableContacts() {
   const {
+    loading,
     contacts,
     deleteContact,
     setOpenModalFilter,
@@ -22,6 +24,7 @@ export function TableContacts() {
 
   return (
     <Container>
+      {loading && <Spinner />}
       <ModalFilter open={openModalFilter} />
 
       <table>
