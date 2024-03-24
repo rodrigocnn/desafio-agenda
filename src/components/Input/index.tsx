@@ -9,8 +9,6 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 export const Input: React.FC<InputProps> = ({ error, value, ...rest }) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
-  console.log("error", error);
-
   useEffect(() => {
     if (error && inputRef.current) {
       inputRef.current.focus();

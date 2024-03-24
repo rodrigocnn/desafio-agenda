@@ -65,13 +65,6 @@ export function ModalContact() {
           value={contact?.workPhone}
         />
 
-        {/* <select id="categorias">
-          <option value="">Selecione Categoria</option>
-          <option value="Pessoal">Pessoal</option>
-          <option value="Trabalho">Trabalho</option>
-          <option value="Emergencia">Emergência</option>
-        </select> */}
-
         <button onClick={onSubmit} type="submit">
           {contactSelected !== 0 ? "Atualizar" : "Cadastrar"}
         </button>

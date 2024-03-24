@@ -16,12 +16,6 @@ export function ModalFilter({ open }: IModalFilterProps) {
     <Modal>
       <Form>
         <Input onChange={handleSearch} name="name" placeholder="Nome" />
-        {/* <ContainerButtons>
-          <button type="submit">Filtrar</button>
-          <button type="button" onClick={() => toggleModal(!open)}>
-            Fechar
-          </button>
-        </ContainerButtons> */}
       </Form>
     </Modal>
   );
