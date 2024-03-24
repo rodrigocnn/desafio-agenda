@@ -7,6 +7,18 @@ export const Container = styled.div`
     width: 100%;
     border-spacing: 0 0.5rem;
 
+    thead{
+      tr {
+          background: var(--blue);
+
+          th {
+            color: var(--shape);
+          }
+        }
+      }
+    }
+
+
     th {
       color: var(--text-body);
       font-weight: 400;
@@ -36,5 +48,18 @@ export const ButtonAction = styled.button`
   svg {
     font-size: 1.5rem;
     color: var(--text-body);
+  }
+`;
+
+export const ButtonFilter = styled.button`
+  background: transparent;
+  border: none;
+  position: relative;
+  top: 5px;
+  left: 10px;
+
+  svg {
+    font-size: 1.5rem;
+    color: var(--shape);
   }
 `;

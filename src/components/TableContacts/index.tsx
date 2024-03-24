@@ -1,18 +1,35 @@
 import { BiSolidEdit } from "react-icons/bi";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { FaFilter } from "react-icons/fa6";
 
-import { ButtonAction, Container, ContainerButtons } from "./styles";
+import {
+  ButtonAction,
+  ButtonFilter,
+  Container,
+  ContainerButtons,
+} from "./styles";
 import { useTableContacts } from "../../hooks/useTableContacts";
+import { ModalFilter } from "../ModalFilter";
 
 export function TableContacts() {
-  const { contacts, deleteContact } = useTableContacts();
+  const { contacts, deleteContact, setOpenModalFilter, openModalFilter } =
+    useTableContacts();
 
   return (
     <Container>
+      <ModalFilter open={openModalFilter} />
+
       <table>
         <thead>
           <tr>
-            <th>Nome</th>
+            <th>
+              Nome
+              <ButtonFilter
+                onClick={() => setOpenModalFilter(!openModalFilter)}
+              >
+                <FaFilter />
+              </ButtonFilter>
+            </th>
             <th>Telefone Principal</th>
             <th>Telefone Celular</th>
             <th>Telefone Trabalho</th>
