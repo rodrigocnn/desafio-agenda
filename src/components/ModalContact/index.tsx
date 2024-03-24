@@ -3,12 +3,18 @@ import { FaWindowClose } from "react-icons/fa";
 
 import { Form } from "./styles";
 import { useModalContact } from "../../hooks/useModalContact";
+import { Input } from "../Input";
 
 Modal.setAppElement("#root");
 
 export function ModalContact() {
-  const { onSubmit, handleChange, handleCloseModal, openModal } =
-    useModalContact();
+  const {
+    onSubmit,
+    handleChange,
+    handleCloseModal,
+    handleInputError,
+    openModal,
+  } = useModalContact();
 
   return (
     <Modal
@@ -28,18 +34,26 @@ export function ModalContact() {
 
       <Form>
         <h2>Cadastrar contato</h2>
-        <input onChange={handleChange} name="name" placeholder="Nome" />
-        <input
+        <Input
+          error={handleInputError("name")}
+          onChange={handleChange}
+          name="name"
+          placeholder="Nome"
+        />
+        <Input
+          error={handleInputError("mainPhone")}
           onChange={handleChange}
           name="mainPhone"
           placeholder="Telefone Principal"
         />
-        <input
+        <Input
+          error={handleInputError("mobilePhone")}
           onChange={handleChange}
           name="mobilePhone"
           placeholder="Telefone Celular"
         />
-        <input
+        <Input
+          error={handleInputError("workPhone")}
           onChange={handleChange}
           name="workPhone"
           placeholder="Telefone Trabalho"
