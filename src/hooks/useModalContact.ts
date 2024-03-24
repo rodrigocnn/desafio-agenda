@@ -38,12 +38,27 @@ export function useModalContact() {
     setValidations(undefined);
   };
 
+  const phoneMask = (value: string): string => {
+    const numero = value.replace(/\D/g, "");
+    if (numero.length >= 2 && numero.length <= 6) {
+      return `(${numero.substring(0, 2)}) ${numero.substring(2)}`;
+    } else if (numero.length > 6) {
+      return `(${numero.substring(0, 2)}) ${numero.substring(
+        2,
+        6
+      )}-${numero.substring(6, 10)}`;
+    }
+
+    return numero;
+  };
+
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const fieldName = event.target.name;
     const value = event.target.value;
-    setContact({ ...contact, [fieldName]: value } as Contact);
+    const handleValue = fieldName === "name" ? value : phoneMask(value);
+    setContact({ ...contact, [fieldName]: handleValue } as Contact);
     setValidations(undefined);
   };
 
