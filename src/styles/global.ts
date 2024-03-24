@@ -24,6 +24,7 @@ export const GlobalStyle = createGlobalStyle`
 html{
     @media (max-width:1080px){
         font-size: 93.75%;
+
     }
 
     @media (max-width:780px){
@@ -53,6 +54,9 @@ button{
     cursor: not-allowed;
 }
 
+
+
+
 .react-modal-overlay {
     background: rgba(0, 0, 0, 0.5);
     position: fixed;
@@ -66,9 +70,9 @@ button{
   }
   .react-modal-content {
     width: 100%;
-    max-width: 576px;
+    max-width: 500px;
     background: var(--background);
-    padding: 3rem;
+    padding: 1rem;
     position: relative;
     border-radius: 0.24rem;
   }
@@ -83,5 +87,38 @@ button{
     &:hover {
       filter: brightness(0.8);
     }
+}
+
+
+
+.react-modal-filter-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+
+
+}
+
+.react-modal-filter {
+  width: 100%;
+  max-width: 200px;
+  background: var(--blue);
+  padding: 1rem;
+  position: absolute;
+  border-radius: 0.24rem;
+  z-index: 999; /* Definindo um índice z alto para que o modal fique acima de outros elementos */
+  top: 15rem;
+  margin-left: -2rem;
+  border: 1px solid #999;
+}
+
+
+
 
 `;
