@@ -14,6 +14,8 @@ export function ModalContact() {
     handleCloseModal,
     handleInputError,
     openModal,
+    contact,
+    contactSelected,
   } = useModalContact();
 
   return (
@@ -39,24 +41,28 @@ export function ModalContact() {
           onChange={handleChange}
           name="name"
           placeholder="Nome"
+          value={contact?.name}
         />
         <Input
           error={handleInputError("mainPhone")}
           onChange={handleChange}
           name="mainPhone"
           placeholder="Telefone Principal"
+          value={contact?.mainPhone}
         />
         <Input
           error={handleInputError("mobilePhone")}
           onChange={handleChange}
           name="mobilePhone"
           placeholder="Telefone Celular"
+          value={contact?.mobilePhone}
         />
         <Input
           error={handleInputError("workPhone")}
           onChange={handleChange}
           name="workPhone"
           placeholder="Telefone Trabalho"
+          value={contact?.workPhone}
         />
 
         {/* <select id="categorias">
@@ -67,7 +73,7 @@ export function ModalContact() {
         </select> */}
 
         <button onClick={onSubmit} type="submit">
-          Cadastrar
+          {contactSelected !== 0 ? "Atualizar" : "Cadastrar"}
         </button>
       </Form>
     </Modal>

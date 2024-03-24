@@ -2,14 +2,14 @@
   "contacts": [
     {
       "id": 1,
-      "name": "Ana Silva",
-      "mainPhone": "(11) 9876-5432",
-      "mobilePhone": "(22) 1234-5678",
-      "workPhone": "(33) 8765-4321"
+      "name": "Ana Silva Souza",
+      "mainPhone": "(44) 2468-1358",
+      "mobilePhone": "(55) 9876-5432",
+      "workPhone": "(66) 4321-8765"
     },
     {
       "id": 2,
-      "name": "Carlos Oliveira",
+      "name": "Carlos Rocha",
       "mainPhone": "(44) 2468-1357",
       "mobilePhone": "(55) 9876-5432",
       "workPhone": "(66) 4321-8765"
@@ -29,46 +29,11 @@
       "workPhone": "(30) 4321-8765"
     },
     {
-      "id": 5,
-      "name": "Patrícia Oliveira",
-      "mainPhone": "(40) 9876-5432",
-      "mobilePhone": "(50) 1234-5678",
-      "workPhone": "(60) 8765-4321"
-    },
-    {
-      "id": 6,
-      "name": "Fernando Almeida",
-      "mainPhone": "(70) 2468-1357",
-      "mobilePhone": "(80) 9876-5432",
-      "workPhone": "(90) 4321-8765"
-    },
-    {
       "id": 7,
       "name": "Camila Santos",
       "mainPhone": "(12) 9876-5432",
       "mobilePhone": "(21) 1234-5678",
       "workPhone": "(34) 8765-4321"
-    },
-    {
-      "name": "Osmar",
-      "mainPhone": "(77) 3612-2525",
-      "mobilePhone": "(77) 3612-2525",
-      "workPhone": "(77) 3612-2525",
-      "id": 8
-    },
-    {
-      "name": "Carmem Mirando",
-      "mainPhone": "(77) 3612-1313",
-      "mobilePhone": "(77) 3612-1313",
-      "workPhone": "(77) 3612-1313",
-      "id": 9
-    },
-    {
-      "name": "Alvaro Morte",
-      "mainPhone": "(77) 3612-2525",
-      "mobilePhone": "(77) 3612-2525",
-      "workPhone": "(77) 3612-2525",
-      "id": 10
     }
   ]
 }

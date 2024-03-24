@@ -1,4 +1,5 @@
-import { useContext, useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 import { ContactsContext } from "../shared/context/ContactsContext";
@@ -8,10 +9,29 @@ import { contactSchema } from "../validations";
 import { ValidationError } from "yup";
 
 export function useModalContact() {
-  const { openModal, setOpenModal, setUpdateGrid, updateGrid } =
-    useContext(ContactsContext);
+  const {
+    contacts,
+    openModal,
+    setOpenModal,
+    setUpdateGrid,
+    updateGrid,
+    contactSelected,
+  } = useContext(ContactsContext);
   const [contact, setContact] = useState<Contact>();
   const [validations, setValidations] = useState<FieldValidate>();
+
+  const filterContactUpdate = () => {
+    return contacts.find((item: Contact) => item.id === contactSelected);
+  };
+
+  useEffect(() => {
+    async function getContactUpdate() {
+      const contactFiltered = await filterContactUpdate();
+      setContact(contactFiltered);
+    }
+
+    getContactUpdate();
+  }, [contactSelected]);
 
   const handleCloseModal = () => {
     setOpenModal(false);
@@ -56,7 +76,13 @@ export function useModalContact() {
     setValidations(undefined);
 
     if (await validation()) {
-      const response = await api.post("contacts", contact);
+      let response = null;
+      if (contactSelected) {
+        response = await api.put(`contacts/${contactSelected}`, contact);
+      } else {
+        response = await api.post("contacts", contact);
+      }
+
       if (response.data) {
         setUpdateGrid(!updateGrid);
         toast("Novo Contato Salvo com Sucesso", { type: "success" });
@@ -67,6 +93,8 @@ export function useModalContact() {
   };
 
   return {
+    contact,
+    contactSelected,
     openModal,
     validations,
     handleInputError,

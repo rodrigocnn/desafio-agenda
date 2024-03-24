@@ -4,8 +4,14 @@ import { api } from "../services/api";
 import { toast } from "react-toastify";
 
 export function useTableContacts() {
-  const { contacts, setContacts, updateGrid, setUpdateGrid, setOpenModal } =
-    useContext(ContactsContext);
+  const {
+    contacts,
+    setContacts,
+    updateGrid,
+    setUpdateGrid,
+    setOpenModal,
+    setContactSelected,
+  } = useContext(ContactsContext);
 
   const [openModalFilter, setOpenModalFilter] = useState<boolean>(false);
 
@@ -41,11 +47,17 @@ export function useTableContacts() {
     }
   }
 
+  async function editContact(id: number) {
+    setContactSelected(id);
+    setOpenModal(true);
+  }
+
   return {
     contacts,
     openModalFilter,
     deleteContact,
     setOpenModal,
     setOpenModalFilter,
+    editContact,
   };
 }

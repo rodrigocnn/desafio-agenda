@@ -12,6 +12,8 @@ interface ContactsContextData {
   setContacts: React.Dispatch<React.SetStateAction<Contact[]>>;
   openModal: boolean;
   setOpenModal: (isOpen: boolean) => void;
+  contactSelected: number;
+  setContactSelected: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export const ContactsContext = createContext<ContactsContextData>(
@@ -22,6 +24,7 @@ export function ContactsProvider({ children }: ContactProviderProps) {
   const [contacts, setContacts] = useState<Contact[]>([]);
   const [openModal, setOpenModal] = useState(false);
   const [updateGrid, setUpdateGrid] = useState(false);
+  const [contactSelected, setContactSelected] = useState(0);
 
   return (
     <ContactsContext.Provider
@@ -32,6 +35,8 @@ export function ContactsProvider({ children }: ContactProviderProps) {
         setUpdateGrid,
         openModal,
         setOpenModal,
+        contactSelected,
+        setContactSelected,
       }}
     >
       {children}

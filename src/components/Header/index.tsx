@@ -4,9 +4,10 @@ import { Container, Content } from "./styles";
 import { ContactsContext } from "../../shared/context/ContactsContext";
 
 export function Header() {
-  const { setOpenModal } = useContext(ContactsContext);
+  const { setOpenModal, setContactSelected } = useContext(ContactsContext);
 
-  const handleOpenModal = () => {
+  const handleOpenModal = async () => {
+    await setContactSelected(0);
     setOpenModal(true);
   };
 

@@ -12,8 +12,13 @@ import { useTableContacts } from "../../hooks/useTableContacts";
 import { ModalFilter } from "../ModalFilter";
 
 export function TableContacts() {
-  const { contacts, deleteContact, setOpenModalFilter, openModalFilter } =
-    useTableContacts();
+  const {
+    contacts,
+    deleteContact,
+    setOpenModalFilter,
+    openModalFilter,
+    editContact,
+  } = useTableContacts();
 
   return (
     <Container>
@@ -46,7 +51,7 @@ export function TableContacts() {
               <td>{contact.workPhone}</td>
               <td>
                 <ContainerButtons>
-                  <ButtonAction>
+                  <ButtonAction onClick={() => editContact(contact.id)}>
                     <BiSolidEdit />
                   </ButtonAction>
                   <ButtonAction onClick={() => deleteContact(contact.id)}>
