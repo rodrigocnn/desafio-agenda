@@ -1,11 +1,13 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ContactsContext } from "../shared/context/ContactsContext";
 import { api } from "../services/api";
 import { toast } from "react-toastify";
 
 export function useTableContacts() {
-  const { contacts, setContacts, updateGrid, setUpdateGrid } =
+  const { contacts, setContacts, updateGrid, setUpdateGrid, setOpenModal } =
     useContext(ContactsContext);
+
+  const [openModalFilter, setOpenModalFilter] = useState<boolean>(false);
 
   async function getContacts() {
     try {
@@ -41,6 +43,9 @@ export function useTableContacts() {
 
   return {
     contacts,
+    openModalFilter,
     deleteContact,
+    setOpenModal,
+    setOpenModalFilter,
   };
 }
